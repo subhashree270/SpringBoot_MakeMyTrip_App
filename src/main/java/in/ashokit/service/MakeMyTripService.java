@@ -14,7 +14,7 @@ import in.ashokit.bindings.Ticket;
 public class MakeMyTripService {
 	
 	public Ticket bookTicket(Passenger p) {
-		String apiUrl="http://localhost:8080/ticket";
+		String apiUrl="http://localhost:9090/ticket";
 		RestTemplate rt = new RestTemplate();
 		ResponseEntity<Ticket> forEntity = rt.postForEntity(apiUrl, p, Ticket.class);
 		Ticket body = forEntity.getBody();
@@ -22,7 +22,7 @@ public class MakeMyTripService {
 	}
 	
 	public List<Ticket> getAllTicket(){
-		String apiUrl="http://localhost:8080/tickets";
+		String apiUrl="http://localhost:9090/tickets";
 		RestTemplate rt=new RestTemplate();
 		ResponseEntity<Ticket[]> forEntity = rt.getForEntity(apiUrl, Ticket[].class);
 		Ticket[] body = forEntity.getBody();
